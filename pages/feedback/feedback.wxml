@@ -1,0 +1,26 @@
+<view class='title'>
+  <view class='title_'>
+    <text>欢迎来到GTD</text>
+  </view>
+</view>
+<view style='height:20rpx;width:100%;background-color:#F5F5F5;'>
+
+</view>
+<form bindsubmit='formSubmit'>
+  <text style='font-size:30rpx;color:	#708090;'>新建反馈</text>
+  <view class='from'>
+    <view style='height:80rpx;width:100%;border:1px solid #F5F5F5;'>
+      <view style='position:absolute;margin:15rpx 0 0 0;'>
+        <input placeholder='请输入反馈的标题 ' placeholder-style='font-size:25rpx;' bindchange='gettitle' value='{{title}}'></input>
+      </view>
+    </view>
+    <view>
+      <textarea placeholder='请输入你的反馈内容' placeholder-style='font-size:35rpx;' bindblur='getcontent'  value='{{content}}'></textarea>
+    </view>
+  </view>
+
+<text style='font-size:20rpx;color:	#708090;'>我们将尽快给你处理，请及时关注我们的消息</text>
+<view style='height:300rpx;width:100%;'>
+</view>
+<button type='primary' formType="submit">提交反馈</button>
+</form>

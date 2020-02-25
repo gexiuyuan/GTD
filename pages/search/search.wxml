@@ -1,0 +1,14 @@
+<view>
+  <view class='content'>
+      <input class='input' type="text" placeholder="请输入您要搜索事件的名字" bindblur='getKeyWord'></input>
+      <image class='img' src='/pages/image/search.png' bindtap='getResult'></image>
+  </view>
+  <view wx:if='{{hasResult}}'>
+    <view class='result' wx:for='{{result}}' wx:for-item='item'>
+      <navigator url="/pages/thing_item/thing_item?tid={{item.tid}}">
+        <text class='cont'>{{item.name}}</text>
+      </navigator>
+    </view>
+  </view>
+
+</view>

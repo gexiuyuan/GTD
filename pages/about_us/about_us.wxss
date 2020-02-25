@@ -1,0 +1,31 @@
+.page>.image1{
+  height: 500rpx;
+  width: 100%;
+  
+}
+.page>.image1>.image>image{
+  position: absolute;
+  margin: 20rpx 0 0 50rpx;
+  width: 650rpx;
+  height: 500rpx;
+}
+.page>.title{
+  font-size: 100rpx;
+  color: #00BFFF;
+  position: relative;
+  margin: 0 0 0 300rpx;
+}
+.page>.text{
+  position: relative;
+  margin: 20rpx 0 0 0;
+  height: 300rpx;
+  width: 100%;
+ border-top:1px solid 	#F5F5F5;
+ border-bottom:1px solid 	#F5F5F5;
+
+}
+.page>.text>.introduce{
+  position: absolute;
+  margin: 60rpx 0 0 0;
+  font-size: 35rpx;
+}

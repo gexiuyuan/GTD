@@ -1,0 +1,53 @@
+{
+  "pages": [
+   
+    "pages/page1/page1",
+    "pages/add_thing/add_thing",
+    "pages/set_up/set_up",
+    "pages/feedback/feedback",
+    "pages/set_content/set_content",
+    "pages/search/search",
+    "pages/about_us/about_us",
+    "pages/copyright/copyright",
+    "pages/weixin/weixin",
+    "pages/help/help",
+    "pages/class/class",
+    "pages/get_set/get_set",
+    "pages/thing_item/thing_item",
+    "pages/mouth_view/mouth_view"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar":{
+   "color": "#999999",
+  "selectedColor": "#09bb07",
+  "borderStyle": "white",
+  "backgroundColor": "#f7f7fa",
+    "list": [
+      {
+        "pagePath": "pages/page1/page1",
+        "iconPath": "pages/image/home.png",
+        "selectedIconPath": "pages/image/home_success.png",
+        "text": "首页"
+      },
+      {
+        "pagePath":"pages/add_thing/add_thing",
+        "iconPath": "pages/image/add.png",
+        "selectedIconPath": "pages/image/add_success.png",
+        "text": "添加"
+      },
+      {
+        "pagePath": "pages/set_up/set_up",
+        "iconPath": "pages/image/self.png",
+        "selectedIconPath": "pages/image/self_success.png",
+        "text": "我的"
+      }
+    ]
+
+  },
+  "sitemapLocation": "sitemap.json"
+}

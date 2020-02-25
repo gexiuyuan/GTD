@@ -1,0 +1,171 @@
+<view class='thing'>
+  <form class='send'>
+    <view style='height:30rpx;width:100%;'>
+    </view>
+    <view style='display: flex;flex-direction: row;'>
+      <view style='height:80rpx;width:150rpx;border-bottom: 0rpx'>
+        <text style='font-size:45rpx;color:#00BFFF;'>事件:</text>
+      </view>
+      <view style='height:50rpx;width:580rpx;border-bottom:1px solid #708090'>
+        <view style='position:absolute;margin:8rpx 0 0 0 ;'>
+          <input placeholder='    请输入事件名' style="font-size:30rpx;" bindblur='getThingName' value='{{thingName}}'></input>
+        </view>
+      </view>
+    </view>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='display: flex;flex-direction: row;'>
+        <view style='height:80rpx;width:150rpx;border-bottom: 0rpx'>
+          <text style='font-size:45rpx;color:#00BFFF;'>日期:</text>
+        </view>
+      </view>
+      <picker mode="date" value="{{thingDate}}" start="1900-01-01" end="2050-09-01" bindchange="getThingDate">
+        <view style='height:50rpx;width:580rpx;border-bottom:1px solid #708090'>
+          <view style='position:absolute;margin:8rpx 0 0 10rpx;'>
+            <view>
+              {{thingDate}}
+            </view>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view style='margin:0 0 0 120rpx;'>
+      <radio-group bindchange='getThingFlag'>
+        <label>
+          <radio value='0' checked='{{thingFlag == 0}}'>不重复</radio>
+        </label>
+        <label style='margin:0 0 0 20rpx;'>
+          <radio value="1" checked='{{thingFlag == 1}}'>每天</radio>
+        </label>
+        <label style='margin:0 0 0 20rpx'>
+          <radio value='2' checked='{{thingFlag == 2}}'>每周</radio>
+        </label>
+        <label style='margin:0 0 0 20rpx'>
+          <radio value='3' checked='{{thingFlag == 3}}'>每月</radio>
+        </label>
+        <view class = '{{dateIm?"disi":"hiddi"}}'>
+          <label style='margin:0rpx 0 0 0rpx'>
+            <radio value='4' checked='{{thingFlag == 4}}'>艾宾浩斯记忆</radio>
+          </label>
+        </view>
+      </radio-group>
+     
+      <view class='{{dateIm?"dis1":"dis2"}}'>
+        <radio-group>
+          <label>
+            <radio value='0' checked='0' checked='{{thingType == 0}}' data-index='0'  bindtap='getThingType'>
+              <text>to do</text>
+            </radio>
+          </label>
+          <label style='margin:0 0 0 20rpx;'>
+            <radio value='1' checked='{{thingType == 1}}' data-index='1'  bindtap='getThingType'>
+                <text>日程</text>
+            </radio>
+          </label>
+        </radio-group>
+        <radio-group hidden='{{dateIm}}' bindchange='getThingImport'>
+          <label style='margin:0 0 0 30rpx;'>
+            <radio value='0' id="r1" checked='{{thingImportance == 0}}'></radio>
+          </label>
+          <label style='margin:0 0 0 18rpx;'>
+            <radio value="1" id="r2" checked='{{thingImportance == 1}}'></radio>
+          </label>
+          <label style='margin:0 0 0 18rpx'>
+            <radio value='2' id="r3" checked='{{thingImportance == 2}}'></radio>
+          </label>
+          <label style='margin:0 0 0 18rpx'>
+            <radio value='3' id="r4" checked='{{thingImportance == 3}}'></radio>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view style='height:40rpx;width:100%;'>
+    </view>
+    <view class = '{{dateIm?"hidd":"dis"}}'>
+        <view style='display: flex;flex-direction: row;'>
+           <view style='height:80rpx;width:150rpx;border-bottom: 0rpx'>
+             <text style='font-size:45rpx;color:#00BFFF;'>时间:</text>
+           </view>
+         </view>
+         <picker mode="time" value='{{thingTime1}}' start="00:00" end="23:59" bindchange='bindTimeChange1'>
+           <view style='height:50rpx;width:160rpx;border-bottom:1px solid #708090'>
+             <view style='position:absolute;margin:8rpx 0 0 10rpx;'>
+               <view>
+                 {{thingTime1}}
+               </view>
+             </view>
+           </view>
+         </picker>
+         <text>-</text>
+        <picker mode="time" value='{{thingTime2}}' start="00:00" end="23:59" bindchange='bindTimeChange2'>
+            <view style='height:50rpx;width:400rpx;border-bottom:1px solid #708090'>
+              <view style='position:absolute;margin:8rpx 0 0 10rpx;'>
+                <view>
+                  {{thingTime2}}
+                </view>
+              </view>
+            </view>
+          </picker>
+     </view>
+     <view style='height:10rpx;width:100%;'>
+     </view>
+    <view style='display: flex;flex-direction: row;'>
+      <view style='height:80rpx;width:150rpx;border-bottom: 0rpx'>
+        <text style='font-size:45rpx;color:#00BFFF;'>备注:</text>
+      </view>
+      <view style='height:50rpx;width:580rpx;border-bottom:1px solid #708090'>
+        <view style='position:absolute;margin:8rpx 0 0 0 ;'>
+          <input placeholder='    备注' style="font-size:30rpx;" bindblur='getThingRemark' value='{{thingRemark}}'></input>
+        </view>
+      </view>
+    </view>
+    <view style='height:20rpx;width:100%;'>
+
+    </view>
+    <view style='display: flex;flex-direction: row;'>
+      <view style='height:80rpx;width:180rpx;border-bottom:0rpx'>
+        <text style='font-size:45rpx;color:#00BFFF;'>子任务:</text>
+      </view>
+      <view bindtap='addtap'>
+        <image style='width:60rpx;height:60rpx;' src="/pages/image/add.png"></image>
+      </view>
+    </view>
+    <view id='assignment' hidden='{{hiddenName}}' style="border: 0">
+      <view style='display: flex;flex-direction: row;'>
+        <view style='height:80rpx;width:100rpx;'>
+          <text style='font-size:30rpx;color:#00BFFF;'>事件:</text>
+        </view>
+        <view style='height:50rpx;width:400rpx;border-bottom:1px solid #708090'>
+          <view style='position:absolute;margin:8rpx 0 0 0 ;'>
+            <input placeholder='' style="font-size:30rpx;" bindblur='getThingItem1'  value='{{thingItem1}}'></input>
+          </view>
+        </view>
+      </view>
+      <view style='display: flex;flex-direction: row;'>
+        <view style='height:80rpx;width:100rpx;'>
+          <text style='font-size:30rpx;color:#00BFFF;'>事件:</text>
+        </view>
+        <view style='height:50rpx;width:400rpx;border-bottom:1px solid #708090'>
+          <view style='position:absolute;margin:8rpx 0 0 0 ;'>
+            <input placeholder='' style="font-size:30rpx;" bindblur='getThingItem2'  value='{{thingItem2}}'></input>
+          </view>
+        </view>
+      </view>
+      <view style='display: flex;flex-direction: row;'>
+        <view style='height:80rpx;width:100rpx;'>
+          <text style='font-size:30rpx;color:#00BFFF;'>事件:</text>
+        </view>
+        <view style='height:50rpx;width:400rpx;border-bottom:1px solid #708090'>
+          <view style='position:absolute;margin:8rpx 0 0 0 ;'>
+            <input placeholder='' style="font-size:30rpx;" bindblur='getThingItem3'  value='{{thingItem3}}'></input>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  style='position:absolute;bottom: 180rpx;width: 100%;display: flex'>
+      <image src='/pages/image/delete.png' style="width: 100rpx;height:100rpx;position:absolute;left:30rpx;"bindtap='delThing' ></image>
+      <image src='/pages/image/sure.png' style="width: 100rpx;height:100rpx;position:absolute;right:30rpx;" bindtap='formSubmit'></image>
+      <!-- <button type="submit" style="background-color:#00BFFF;margin-bottom: 3rpx;" >确认保存</button>
+      <button type="button" style="background-color:#FF0000;" >确认删除</button> -->
+    </view>
+  </form>
+</view>

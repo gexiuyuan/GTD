@@ -1,0 +1,8 @@
+<view class='page'>
+  <view class='title'>
+    <image style="height:300rpx;width:100%;" src='/pages/image/logo2.png'></image>
+  </view>
+  <view class='copy'>
+    <text>" GTD"小程序由东北林业大学GTD小队开发，最终解释权归其所有。</text>
+  </view>
+</view>

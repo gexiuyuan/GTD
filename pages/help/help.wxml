@@ -1,0 +1,48 @@
+<view class='page'>
+  <view class='title'>
+    <view class='image'>
+      <image src="/pages/image/GTDlogo.png" style='width:55px;height:60px;'></image>
+    </view>
+  </view>
+  <view style='height:30rpx;width:100%; '></view>
+  <view class='time'>
+    <view class="content">
+      <image class='image' src='/pages/image/help_index.png'></image>
+      <view class="text">首页展示</view>
+    </view>
+    <text class='content_item'>1. 时间轴和to do list在同一界面，通过观察左侧时间轴的空缺，更方便右边to do的时间安排</text>
+  </view>
+  <view style='height:30rpx;width:100%; '></view>
+
+  <view class='Ebinghaus'>
+    <view class="content">
+      <image class='image' src='/pages/image/ibinhaosi.png'></image>
+      <view class="text">艾宾浩斯</view>
+    </view>
+    <text class='content_item'>2. 艾宾浩斯功能，自动帮用户安排复习时间</text>
+  </view>
+  <view style='height:30rpx;width:100%; '></view>
+  <view class='moon'>
+    <view class="content">
+      <image class='image' src='/pages/image/task_resolve.png'></image>
+      <view class="text">月视图</view>
+    </view>
+    <text class='content_item'>3. 月视图功能，帮助用户大致了解每个月份的重要事件</text>
+  </view>
+  <view style='height:30rpx;width:100%; '></view>
+  <view class='child_task'>
+    <view class="content">
+      <image class='image' src='/pages/image/help_task.png'></image>
+      <view class="text">子任务</view>
+    </view>
+    <text class='content_item'>4. 子任务，将困难的大型任务分解，减轻用户压力</text>
+  </view>
+  <view style='height:30rpx;width:100%; '></view>
+  <view class='classes'>
+    <view class="content">
+      <image class='image' src='/pages/image/class_table_new.png'></image>
+      <view class="text">导入课表</view>
+    </view>
+    <text class='content_item'>5. 课程表导入功能，利于大学生更全面地安排日程</text>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view style='width:100%;height:20rpx'>
+</view>
+<view class='set'>
+  <view style=" display: flex;flex-direction: row;">
+    <view style='width:20rpx;height:100rpx;'>
+    </view>
+    <view style='width:729rpx;height:100rpx;display:flex;flex-direction:row;'>
+      <view style='position:absolute;margin:25rpx 0 0 0;' bindtap='us'>
+        <text>关于我们</text>
+      </view>
+      <view style='position:absolute;margin:25rpx 0 0 672rpx;'bindtap='us'>
+        <text decode='true' style='color:#aaa;'>&gt;</text>
+      </view>
+    </view>
+  </view>
+  <view style='width:100%;height:30rpx;background-color:#F5F5F5'>
+  </view>
+  <view style=" display: flex;flex-direction: row;">
+    <view style='width:20rpx;height:100rpx;'>
+    </view>
+    <view style='width:729rpx;height:100rpx;display:flex;flex-direction:row;'>
+      <view style='position:absolute;margin:25rpx 0 0 0;'bindtap='copyright'>
+        <text>版权信息</text>
+      </view>
+      <view style='position:absolute;margin:25rpx 0 0 672rpx;' bindtap='copyright'>
+        <text decode='true' style='color:#aaa;'>&gt;</text>
+      </view>
+    </view>
+  </view>
+  <view style='width:100%;height:30rpx;background-color:#F5F5F5'>
+  </view>
+  <view style=" display: flex;flex-direction: row;">
+    <view style='width:20rpx;height:100rpx;'>
+    </view>
+    <view style='width:729rpx;height:100rpx;display:flex;flex-direction:row;'>
+      <view style='position:absolute;margin:25rpx 0 0 0;'bindtap='weixin'>
+        <text>微信小程序码</text>
+      </view>
+      <view style='position:absolute;margin:25rpx 0 0 672rpx;'bindtap='weixin'>
+        <text decode='true' style='color:#aaa;'>&gt;</text>
+      </view>
+    </view>
+  </view>
+</view>

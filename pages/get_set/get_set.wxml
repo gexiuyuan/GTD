@@ -1,0 +1,149 @@
+<view style='width:100%;height:20rpx'>
+</view>
+<view style='background-color:white;'>
+  <form bindsubmit='formSubmit' bindreset='formReset'>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>微信昵称</text>
+        </view>
+      </view>
+      <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+        <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+        </view>
+      </view>
+    </view>
+      <view style='width:100%;height:40rpx;background-color:#F5F5F5;'>
+    </view>
+     <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>个性签名</text>
+        </view>
+      </view>
+      <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+        <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+          <input placeholder='请输入个性签名' type='text' maxlength='20' bindblur='getSignature'  value='{{signature}}'></input>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+          <text decode='true' style='color:#aaa;'></text>
+        </view>
+      </view>
+    </view>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>生日</text>
+        </view>
+      </view>
+      <picker mode="date" value="{{date}}" start="1900-01-01" end="2050-09-01" bindchange="bindDateChange">
+        <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+          <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+            <!--<text style='font-size:30rpx;color:#aaa;'>1998-09-17</text>-->
+            <view>
+              {{date}}
+            </view>
+          </view>
+          <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+            <text decode='true' style='color:#aaa;'>&gt;</text>
+          </view>
+        </view>
+      </picker>
+    </view>
+     <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>性别</text>
+        </view>
+      </view>
+      <picker  value="{{index}}"  bindchange="bindChange" range='{{sex}}'>
+        <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+          <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+            <!--<text style='font-size:30rpx;color:#aaa;'>1998-09-17</text>-->
+            <view>
+              {{sex[index]}}
+            </view>
+          </view>
+          <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+            <text decode='true' style='color:#aaa;'>&gt;</text>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view style='width:100%;height:40rpx;background-color:#F5F5F5;'>
+    </view>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>职业</text>
+        </view>
+      </view>
+      <picker  value="{{index1}}"  bindchange="bindChangejob" range='{{job}}'>
+        <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+          <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+            <!--<text style='font-size:30rpx;color:#aaa;'>1998-09-17</text>-->
+            <view>
+              {{job[index1]}}
+            </view>
+          </view>
+          <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+            <text decode='true' style='color:#aaa;'>&gt;</text>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view style='width:100%;height:40rpx;background-color:#F5F5F5;'>
+    </view>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>邮箱</text>
+        </view>
+      </view>
+      <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+        <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+          <input placeholder='你的邮箱' type='text' bindblur='set_mail' name="email" value='{{email}}'></input>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+          <text decode='true' style='color:#aaa;'></text>
+        </view>
+      </view>
+    </view>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>学校</text>
+        </view>
+      </view>
+      <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+        <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+          <input placeholder='填写学校' bindblur='getSchool' type='text' maxlength='10' value='{{school}}'></input>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+          <text decode='true' style='color:#aaa;'></text>
+        </view>
+      </view>
+    </view>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>公司</text>
+        </view>
+      </view>
+      <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+        <view style='position:absolute;margin:25rpx 0 0 100rpx;'>
+          <input placeholder='填写公司'  bindblur='getCompany'  type='text' maxlength='10' value='{{company}}'></input>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+          <text decode='true' style='color:#aaa;'></text>
+        </view>
+      </view>
+    </view>
+    <view style='width:100%;height:40rpx;background-color:#F5F5F5;'>
+    </view>
+    <button class='submit' formType="submit" type="primary">提交</button>
+  </form>
+</view>

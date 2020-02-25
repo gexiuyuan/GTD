@@ -1,0 +1,211 @@
+.page_title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100rpx;
+}
+
+.page_title>.title1 {
+  margin: 10rpx 0 0 0;
+  font-size: 70rpx;
+}
+
+.page_title>.title2 {
+  position: absolute;
+  margin: 50rpx 0 0 80rpx;
+  font-size: 30rpx;
+}
+
+.page_title>.title3 {
+  width: 160rpx;
+  height: 50rpx;
+  position: absolute;
+  margin: 30rpx 0 0 550rpx;
+}
+
+.page_title>.title3>.titile3-1 {
+  position: absolute;
+  margin: 0 0 0 10 px;
+}
+
+.page_title2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.page_title2>.page_title2_1 {
+
+  width: 120rpx;
+  height: 100rpx;
+  border: 1rpx solid rgb(124, 119, 119);
+  background-color: #ffffff;
+  border-radius: 5rpx;
+}
+.page_title2>.page_title2_1 >.data1_1
+{
+  font-size: 28rpx; 
+  margin: 0 0 0 10rpx;
+}
+.page_title2>.page_title2_1 >.data1_2
+{
+  font-size: 28rpx;
+  margin: 0 0 0 30rpx;
+}
+.page_title2_1{
+  background-color: #ffffff;
+}
+#blue{
+  border:1px solid rgb(44, 194, 240);
+}
+
+.center{
+  display: flex;
+}
+.center .dateThing {
+  background-color: #f1eeee;
+  width: 55%;
+  height: 100%;
+}
+.dateItemIndex{
+  float: left;
+  font-size: 35rpx;
+  color: #373838de;
+}
+.index{
+  width:10rpx;
+  font-size:27rpx;
+  padding:0;
+  clear: both;
+  margin-top:-30rpx;
+}
+.itemContent{ 
+  width:300rpx;
+  margin-left: 50rpx;
+}
+.dateItemContent{
+  overflow: hidden;
+  margin-left: 20rpx;
+  font-size: 35rpx; 
+  background-color: #fdf9f9;
+  
+}
+.center .todoThing {
+  background-color: #fdf9f9;
+  height: 50%;
+  width: 45%;
+  margin-left: 20rpx;
+  font-size: 35rpx;
+}
+.nav{ 
+  display: inline-block;
+  width:300rpx;
+}
+#r0{
+  background: #6699ff;
+}
+#r1{
+  background: #00cc99;
+}
+#r2{
+  background: #ff3333;
+}
+#r3{
+  background: #d7d7d7;
+}
+
+#r0,#r1,#r2,#r3{
+ padding: 5rpx;
+ margin: 2rpx;
+ border:1rpx solid rgb(110, 110, 110);
+ border-left: 0;
+}
+#red{
+  color: #ff3333;
+}
+#orange{
+  color: #ff9900;
+}
+#yellow{
+  color:#ffff00;
+}
+#black{
+  color: #333333;
+}
+.done{
+  text-decoration: line-through;
+}
+.h1{
+  line-height: 35rpx;
+  margin-left: -25rpx;
+  margin-right: 30rpx;
+  font-size: 27rpx;
+  color: rgb(32, 32, 32)
+}
+.name{
+  margin-right: 5rpx;
+}
+.todo_box{
+  width: 300rpx;
+}
+.mask_layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  left:0;top:0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+.modal_box {
+  width: 76%;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  background: #fafafa;
+  margin: -150px 12% 0 12%;
+  border-radius: 3px;
+}
+.title {
+  padding: 15px;
+  text-align: center;
+  background-color: gazure;
+}
+ 
+.content {
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+.btn1 {
+  width: 100%;
+  margin-top: 65rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: white;
+}
+.sure {
+  width: 100%;
+  padding: 10px;
+  color: #44b549;
+  background-color: white;
+  border-left: 1px solid #d0d0d0;
+  text-align: center;
+}
+ 
+.modalMsg {
+  text-align: left;
+  margin-top: 20rpx;
+  margin-left:100rpx;
+  display: block;
+}
+.con{
+  display: block;
+  width: 300rpx;
+}
+.title1{
+  margin-left:15rpx;
+}

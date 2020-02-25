@@ -1,0 +1,22 @@
+.content{
+ display: flex;
+ height:60rpx;
+ border:1rpx solid black;
+ background-color:rgb(230, 233, 235);
+}
+.input{
+  width:80%;
+  height:60rpx;
+}
+.img{
+  width:60rpx;
+  height:60rpx;
+  position:absolute;
+  right: 0
+}
+.result{
+  background-color: rgb(230, 233, 235);
+}
+.cont{
+  margin-top: 20rpx;
+}

@@ -1,0 +1,79 @@
+<view class='page_title' style='background-color:white;'>
+  <view class="page_title1">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" bindtap='get_set'></image>
+      <view class='page1' bindtap='get_set'>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <view class='revise'>
+          <text class="userinfo-nickname1" decode='true' space='true'>查看并编辑个人资料</text>
+          <text class='pointing' space='true' decode='true'>&gt;</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='gray_bar'></view>
+  <view class='middle'>
+
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <image style='padding:20rpx 40rpx;width:60rpx;height:60rpx;' src="/pages/image/class_table.png"></image>
+      </view>
+      <view style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'
+        bindtap='class'>
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>课程</text>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;' bindtap='class'>
+          <text decode='true' style='color:#aaa;'>&gt;</text>
+        </view>
+      </view>
+    </view>
+    <view style=" display: flex;flex-direction: row;">
+      <view style='width:150rpx;height:100rpx;'>
+        <image style='padding:20rpx 40rpx;width:60rpx;height:60rpx;' src="/pages/image/help.png"></image>
+      </view>
+      <view bindtap='help' style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+        <view style='position:absolute;margin:25rpx 0 0 0;' >
+          <text>帮助</text>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;' bindtap='help'>
+          <text decode='true' style='color:#aaa;'>&gt;</text>
+        </view>
+      </view>
+    </view>
+    <view style=" display: flex;flex-direction: row;" >
+      <view style='width:150rpx;height:100rpx;'>
+        <image style='padding:20rpx 40rpx;width:60rpx;height:60rpx;' src="/pages/image/feedback.png"></image>
+      </view>
+      <view bindtap='feedback' style='width:599rpx;height:100rpx;border-bottom:0px solid 	#F5F5F5;display:flex;flex-direction:row;'
+        >
+        <view style='position:absolute;margin:25rpx 0 0 0;'>
+          <text>反馈</text>
+        </view>
+        <view style='position:absolute;margin:25rpx 0 0 542rpx;'>
+          <text decode='true' style='color:#aaa;'>&gt;</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='gray_bar1'></view>
+  <view style=" display: flex;flex-direction: row;" >
+    <view style='width:150rpx;height:100rpx;'>
+      <image style='padding-left:25rpx;width:100rpx;height:100rpx;' src="/pages/image/setting.png"></image>
+    </view>
+    <view bindtap='set_content' style='width:599rpx;height:100rpx;border-bottom:1px solid 	#F5F5F5;display:flex;flex-direction:row;'>
+      <view style='position:absolute;margin:25rpx 0 0 0;' >
+        <text>设置</text>
+      </view>
+      <view style='position:absolute;margin:25rpx 0 0 542rpx;' bindtap='set_content'>
+        <text decode='true' style='color:#aaa;'>&gt;</text>
+      </view>
+    </view>
+  </view>
+  <view style='position:absolute;bottom: 80rpx;width: 100%;'>
+    <button style="background-color:#00BFFF;"
+      wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登陆 </button>
+    <button style="background-color:#ff3333;"
+      wx:if="{{hasUserInfo}}" bindtap='logout'> 退出登陆 </button>
+  </view>
+</view>

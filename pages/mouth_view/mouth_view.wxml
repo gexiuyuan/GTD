@@ -1,0 +1,23 @@
+<view>
+  <view class='page_title'>
+    <text class='title1' bindtap='getMouthView'>{{mouth}}</text>
+    <text class='title2'>{{year}}</text>
+    <view class='title3' style="border: 0;">
+      <!--<text class='title3-1' bindtap='search'>搜索</text>-->
+      <image bindtap='search' style='padding-left:100rpx;margin-top:10rpx;width:60rpx;height:60rpx;' src="/pages/image/search.png">
+      </image>
+    </view>
+  </view>
+  <view class='page_title2' wx:for='{{weeks}}' wx:for-index='i' >
+    <view class='page_title2_1' wx:for='{{item}}'  wx:for-index='j' id='{{j==6?"border":""}}'>
+      <text class='data1_1' class='{{item.flag!=1?"over":""}}' id='{{currentDate==item.value&&item.flag==1?"blue":""}}' bindtap='toPage1' data-index='{{item.value}}{{item.flag}}'>{{item.value}}</text>
+      <text class='data1_2' wx:if='{{i==0&&j==0}}'>一</text>
+      <text class='data1_2' wx:if='{{i==0&&j==1}}'>二</text>
+      <text class='data1_2' wx:if='{{i==0&&j==2}}'>三</text>
+      <text class='data1_2' wx:if='{{i==0&&j==3}}'>四</text>
+      <text class='data1_2' wx:if='{{i==0&&j==4}}'>五</text>
+      <text class='data1_2' wx:if='{{i==0&&j==5}}'>六</text>
+      <text class='data1_2' wx:if='{{i==0&&j==6}}'>日</text>
+    </view>
+  </view>
+</view>

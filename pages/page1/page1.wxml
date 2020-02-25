@@ -1,0 +1,113 @@
+<view>
+  <view class='page_title'>
+    <text class='title1' bindtap='getMouthView'>{{mouth}}</text>
+    <text class='title2' bindtap='getMouthView'>{{year}}</text>
+    <view class='title3' style="border: 0;">
+      <!--<text class='title3-1' bindtap='search'>搜索</text>-->
+      <image bindtap='search' style='padding-left:100rpx;margin-top:10rpx;width:60rpx;height:60rpx;'
+        src="/pages/image/search.png">
+      </image>
+    </view>
+  </view>
+  <view class='page_title2'>
+    <view class='page_title2_1' id='{{currentDate == Mon?"blue":""}}' bindtap='getSomeDate1'>
+      <text bindtap='data1' class='data1_1'>{{Mon}}</text>
+      <text class='data1_2'>一</text>
+    </view>
+    <view class='page_title2_1' id='{{currentDate == Tue?"blue":""}}' bindtap='getSomeDate2'>
+      <text class='data1_1'>{{Tue}}</text>
+      <text class='data1_2'>二</text>
+    </view>
+    <view class='page_title2_1' id='{{currentDate == Wed?"blue":""}}' bindtap='getSomeDate3'>
+      <text class='data1_1'>{{Wed}}</text>
+      <text class='data1_2'>三</text>
+    </view>
+    <view class='page_title2_1' id='{{currentDate == Thu?"blue":""}}' bindtap='getSomeDate4'>
+      <text class='data1_1'>{{Thu}}</text>
+      <text class='data1_2'>四</text>
+    </view>
+    <view class='page_title2_1' id='{{currentDate == Fri?"blue":""}}' bindtap='getSomeDate5'>
+      <text class='data1_1'>{{Fri}}</text>
+      <text class='data1_2'>五</text>
+    </view>
+    <view class='page_title2_1' id='{{currentDate == Sat?"blue":""}}' bindtap='getSomeDate6'>
+      <text class='data1_1'>{{Sat}}</text>
+      <text class='data1_2'>六</text>
+    </view>
+    <view class='page_title2_1' id='{{currentDate == Sun?"blue":""}}' bindtap='getSomeDate7'
+      style="border-right: 1rpx solid rgb(85, 82, 82)">
+      <text class='data1_1'>{{Sun}}</text>
+      <text class='data1_2'>日</text>
+    </view>
+  </view>
+
+  <view class="center">
+    <view class="dateThing">
+      <view>
+        <view class='dateItemContent' wx:for='{{userDateThing}}' wx:for-index='i'>
+          <view class="dateItemIndex">
+            <text class="index" style="display:block">
+              {{i < 10?"0"+i:i}}:
+            </text>
+            <view class="itemContent">
+              <view wx:for='{{item}}' wx:for-item='it'>
+                <navigator wx:if='{{it != 0}}' url="/pages/thing_item/thing_item?tid={{it.tid}}" class="nav">
+                  <view bindtap='getDateThing' id='r{{it.importance}}' wx:if='{{it != 0}}'><text class="h1"></text><text
+                      class='name'>{{it.name}}</text></view>
+                </navigator>
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="todoThing">
+      <checkbox-group>
+        <view wx:for='{{userTodoThing}}' wx:for-index='i' class='todo_box'>
+          <view bindtap='getTodoThing'>
+            <checkbox style="transform: scale(0.6,0.6)" data-index='{{item.tid}}' checked='{{item.done==1}}'
+              bindtap='getDown'></checkbox>
+            <navigator url="/pages/thing_item/thing_item?tid={{item.tid}}" style="display:inline">
+              <text id='{{i==0?"red":i==1?"orange":i==2?"yellow":"black"}}'
+                class='{{item.done==1?"done":""}}'>{{item.name}}</text>
+            </navigator>
+          </view>
+        </view>
+      </checkbox-group>
+    </view>
+  </view>
+</view>
+<view hidden='{{modalhidden}}'>
+  <view class='mask_layer' />
+  <view class='modal_box'>
+    <view class="title">今日提醒任务</view>
+    <view class='content'>
+      <text class='title1'>日程:</text>
+      <view class='modalMsg' wx:for='{{messages_date}}'>
+        <view id='r{{item.importance}}' class="con" style="display: inline" bindtap='toItem' data-index="{{item.tid}}">{{item.name}}</view>
+      </view>
+      <text class='title1'>todo:</text>
+      <checkbox-group>
+      <view class='modalMsg' wx:for='{{messages_todo}}' wx:for-index='i'>
+        <checkbox style="transform: scale(0.6,0.6);" data-index='{{item.tid}}'
+          bindtap='getDown'></checkbox>
+        <view id='{{i==0?"red":i==1?"orange":i==2?"yellow":"black"}}' style="display: inline" bindtap='toItem' data-index="{{item.tid}}"
+          class="con">{{item.name}}</view>
+      </view>
+      </checkbox-group>
+      <text class='title1'>艾宾浩斯:</text>
+      <checkbox-group>   
+        <view class='modalMsg'  wx:for='{{messages_ibinhaosi}}' wx:for-index='i'>
+          <checkbox style="transform: scale(0.6,0.6)" data-index='{{item.tid}}'
+          bindtap='getDown'></checkbox>
+          <view class="con" style="display: inline" bindtap='toItem' data-index="{{item.tid}}">{{item.name}}</view>
+        </view>
+      </checkbox-group>
+
+    </view>
+    <view class='btn1'>
+      <view bindtap='sure' class='sure'>确定</view>
+    </view>
+  </view>
+</view>

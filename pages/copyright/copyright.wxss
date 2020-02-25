@@ -1,0 +1,15 @@
+page{
+  
+  background-color:#FFFFF0;
+}
+.page>.title{
+  position: relative;
+  margin: 0 0 0 10rpx;
+  font-size: 350rpx;
+  color: #00BFFF;
+}
+.page>.copy{
+  font-family:  "华文宋体","STSong";
+  position: relative;
+  margin: 100rpx 0 0 0;
+}
